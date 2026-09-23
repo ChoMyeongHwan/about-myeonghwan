@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>안녕하세요! 저를 소개합니다 ✨</title>
-  <meta name="description" content="모던하고 인터랙티브한 개인 자기소개 웹페이지입니다. 이름, 인사말, 관심사 및 좋아하는 것들을 확인해보세요!">
+  <title>조명환 (MyeongHwan Cho) - 자기소개 ✨</title>
+  <meta name="description" content="소프트웨어 개발자 조명환(MyeongHwan Cho)의 인터랙티브 자기소개 페이지입니다. 개발에 대한 생각과 배드민턴 취미, 일상의 관심사를 둘러보세요.">
   
   <!-- Pretendard & Outfit Fonts -->
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
@@ -49,31 +49,32 @@
       <div class="avatar-wrapper">
         <div class="avatar-ring"></div>
         <div class="avatar-inner" id="profile-avatar">
-          👨‍💻
+          🏸
         </div>
         <div class="status-badge" title="현재 상태">
           <span class="status-pulse"></span>
-          <span id="profile-status-text">새로운 배움과 영감을 찾는 중 🚀</span>
+          <span id="profile-status-text">배움과 성장을 지속하는 중 🚀</span>
         </div>
       </div>
 
       <div class="hero-content">
         <div class="title-greeting-wrap">
-          <span class="sub-badge" id="profile-role">Frontend & Creative Explorer</span>
+          <span class="sub-badge" id="profile-role">Software Developer</span>
           <h1 class="main-title">
-            안녕하세요, <span class="highlight-name" id="profile-name">김민수</span>입니다.
+            안녕하세요, <span class="highlight-name" id="profile-name">조명환</span>입니다.
           </h1>
           <p class="typewriter-text" id="typewriter-line"></p>
         </div>
 
         <p class="bio-desc" id="profile-bio">
-          사용자에게 편리함과 즐거움을 주는 웹 경험을 디자인하고 구축하는 것을 좋아합니다. 
-          호기심을 바탕으로 기술과 일상의 연결고리를 탐구하며 지속적으로 성장해나가고 있습니다.
+          읽기 좋은 코드와 간결한 문제 해결을 지향하는 개발자 조명환(MyeongHwan Cho)입니다. 
+          새로운 기술을 차근차근 익혀 실용적인 결과물로 만드는 것을 좋아하며, 
+          주말에는 배드민턴 코트에서 땀 흘리며 에너지를 충전합니다.
         </p>
 
         <!-- Profile Quick Action Badges -->
         <div class="hero-actions">
-          <button id="copy-email-btn" class="primary-btn" data-email="minsu.alex.kim@example.com">
+          <button id="copy-email-btn" class="primary-btn" data-email="1jmhcho@gmail.com">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="4" width="20" height="16" rx="2"></rect>
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
@@ -102,9 +103,9 @@
         <!-- Category Filter Chips -->
         <div class="filter-group" role="tablist" aria-label="관심사 카테고리 필터">
           <button class="filter-chip active" data-category="all" role="tab" aria-selected="true">전체 보기</button>
+          <button class="filter-chip" data-category="hobby" role="tab" aria-selected="false">🏸 취미 & 힐링</button>
           <button class="filter-chip" data-category="tech" role="tab" aria-selected="false">💻 테크 & 코딩</button>
           <button class="filter-chip" data-category="daily" role="tab" aria-selected="false">☕ 일상 & 라이프</button>
-          <button class="filter-chip" data-category="hobby" role="tab" aria-selected="false">🎨 취미 & 힐링</button>
         </div>
       </div>
 
@@ -117,31 +118,31 @@
     <!-- Quick Stats / Highlights Section -->
     <section class="stats-section">
       <div class="stat-card">
-        <span class="stat-icon">☕</span>
+        <span class="stat-icon">🏸</span>
         <div class="stat-info">
-          <span class="stat-val">3+ 잔</span>
-          <span class="stat-label">하루 평균 마시는 커피</span>
+          <span class="stat-val">주 2~3회</span>
+          <span class="stat-label">배드민턴 운동 루틴</span>
         </div>
       </div>
       <div class="stat-card">
-        <span class="stat-icon">🎧</span>
+        <span class="stat-icon">☕</span>
         <div class="stat-info">
-          <span class="stat-val">120+ 시간</span>
-          <span class="stat-label">월간 로파이 청취 시간</span>
+          <span class="stat-val">하루 2잔</span>
+          <span class="stat-label">집중을 돕는 커피 타임</span>
         </div>
       </div>
       <div class="stat-card">
         <span class="stat-icon">🌱</span>
         <div class="stat-info">
-          <span class="stat-val">매일 1시간</span>
-          <span class="stat-label">새로운 기술 탐독</span>
+          <span class="stat-val">꾸준한 배움</span>
+          <span class="stat-label">기본기와 기술 탐구</span>
         </div>
       </div>
       <div class="stat-card">
-        <span class="stat-icon">🏃‍♂️</span>
+        <span class="stat-icon">🎧</span>
         <div class="stat-info">
-          <span class="stat-val">5 km</span>
-          <span class="stat-label">주말 저녁 산책 루틴</span>
+          <span class="stat-val">몰입 플레이리스트</span>
+          <span class="stat-label">업무 집중 사운드</span>
         </div>
       </div>
     </section>
@@ -149,7 +150,7 @@
     <!-- Footer -->
     <footer class="app-footer">
       <div class="footer-content">
-        <p>© 2026 <span id="footer-name">김민수</span>. All rights reserved.</p>
+        <p>© 2026 <span id="footer-name">조명환 (MyeongHwan Cho)</span>. All rights reserved.</p>
         <p class="footer-sub">Crafted with HTML, Modern CSS & JavaScript</p>
       </div>
     </footer>
@@ -165,23 +166,23 @@
       <form id="profile-edit-form" class="modal-body">
         <div class="form-group">
           <label for="input-avatar">대표 이모지</label>
-          <input type="text" id="input-avatar" maxlength="2" value="👨‍💻" class="form-input">
+          <input type="text" id="input-avatar" maxlength="2" value="🏸" class="form-input">
         </div>
         <div class="form-group">
           <label for="input-name">이름</label>
-          <input type="text" id="input-name" required value="김민수" class="form-input">
+          <input type="text" id="input-name" required value="조명환" class="form-input">
         </div>
         <div class="form-group">
           <label for="input-role">역할 / 한 줄 태그</label>
-          <input type="text" id="input-role" value="Frontend & Creative Explorer" class="form-input">
+          <input type="text" id="input-role" value="Software Developer" class="form-input">
         </div>
         <div class="form-group">
           <label for="input-status">현재 상태</label>
-          <input type="text" id="input-status" value="새로운 배움과 영감을 찾는 중 🚀" class="form-input">
+          <input type="text" id="input-status" value="배움과 성장을 지속하는 중 🚀" class="form-input">
         </div>
         <div class="form-group">
           <label for="input-bio">간단한 소개글</label>
-          <textarea id="input-bio" rows="3" class="form-input">사용자에게 편리함과 즐거움을 주는 웹 경험을 디자인하고 구축하는 것을 좋아합니다. 호기심을 바탕으로 기술과 일상의 연결고리를 탐구하며 지속적으로 성장해나가고 있습니다.</textarea>
+          <textarea id="input-bio" rows="3" class="form-input">읽기 좋은 코드와 간결한 문제 해결을 지향하는 개발자 조명환(MyeongHwan Cho)입니다. 새로운 기술을 차근차근 익혀 실용적인 결과물로 만드는 것을 좋아하며, 주말에는 배드민턴 코트에서 땀 흘리며 에너지를 충전합니다.</textarea>
         </div>
         <div class="modal-actions">
           <button type="button" class="glass-btn" id="modal-cancel-btn">취소</button>

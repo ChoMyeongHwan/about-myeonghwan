@@ -3,74 +3,84 @@
 // ==========================================================================
 const DEFAULT_FAVORITES = [
   {
+    id: "hobby-1",
+    category: "hobby",
+    icon: "🏸",
+    title: "주말 배드민턴 & 유산소 운동",
+    desc: "빠른 랠리 속에서 집중하며 땀 흘리는 시간을 좋아합니다. 스트레스를 시원하게 해소하고 한 주를 다시 시작할 활력을 충전합니다.",
+    tags: ["Badminton", "랠리", "건강한루틴"],
+    likes: 48
+  },
+  {
     id: "tech-1",
     category: "tech",
     icon: "💻",
-    title: "모던 웹 기술 & 인터랙션 디자인",
-    desc: "직관적이고 미려한 UI/UX를 구현하는 과정을 사랑합니다. 섬세한 마이크로 애니메이션과 반응형 디자인에 큰 흥미를 느낍니다.",
-    tags: ["Frontend", "CSS Art", "UI/UX"],
-    likes: 28
+    title: "읽기 좋은 코드와 간결한 설계",
+    desc: "누구나 쉽게 이해하고 유지보수할 수 있는 명확한 코드와 직관적인 문제 해결에 관심이 많습니다.",
+    tags: ["CleanCode", "Architecture", "ProblemSolving"],
+    likes: 36
   },
   {
     id: "tech-2",
     category: "tech",
-    icon: "🤖",
-    title: "생성형 AI & 개발 생산성 도구",
-    desc: "AI 도구를 활용해 더 스마트하고 효율적으로 문제를 해결하는 새로운 워크플로우를 탐구하고 실험합니다.",
-    tags: ["Generative AI", "Automation", "Tooling"],
-    likes: 35
+    icon: "🛠️",
+    title: "개발 생산성 도구 & 자동화",
+    desc: "반복 작업을 줄이고 작업 효율을 높여주는 유용한 개발 도구와 자동화 스크립트를 탐색하고 적용합니다.",
+    tags: ["Productivity", "Automation", "DevTools"],
+    likes: 29
   },
   {
     id: "daily-1",
     category: "daily",
     icon: "☕",
-    title: "스페셜티 드립 커피",
-    desc: "신선한 원두를 갈아 정성껏 핸드드립으로 내리는 아침 루틴. 은은한 커피 향과 함께 하루를 차분하게 시작하는 시간을 아낍니다.",
-    tags: ["Hand Drip", "Morning Routine", "Coffee Lover"],
-    likes: 42
+    title: "아침 커피와 하루 계획",
+    desc: "하루를 시작하기 전 따뜻한 커피 한 잔과 함께 오늘 할 일과 우선순위를 차분히 정리하는 시간을 갖습니다.",
+    tags: ["MorningCoffee", "DailyRoutine", "Focus"],
+    likes: 41
   },
   {
     id: "daily-2",
     category: "daily",
     icon: "🎧",
-    title: "로파이 비트 & 앰비언트 음악",
-    desc: "깊은 몰입과 집중이 필요할 땐 잔잔한 로파이와 신스웨이브 음악을 듣습니다. 일상의 소음을 지우고 리듬을 더해줍니다.",
-    tags: ["Lofi Chill", "Focus Music", "Playlist"],
-    likes: 19
-  },
-  {
-    id: "hobby-1",
-    category: "hobby",
-    icon: "📚",
-    title: "기술 서적 & 에세이 독서",
-    desc: "다양한 관점과 통찰을 전해주는 도서들을 꾸준히 읽습니다. 책 속의 문장 하나가 새로운 생각의 실마리가 되곤 합니다.",
-    tags: ["Reading", "Insights", "Growth"],
-    likes: 24
+    title: "몰입을 돕는 플레이리스트",
+    desc: "작업이나 공부를 할 때 잡음을 지워주고 흐름을 편안하게 유지해 주는 잔잔한 음악을 즐겨 듣습니다.",
+    tags: ["BGM", "FocusMusic", "Playlist"],
+    likes: 23
   },
   {
     id: "hobby-2",
     category: "hobby",
-    icon: "🌿",
-    title: "도심 속 공원 산책과 사진",
-    desc: "복잡한 모니터를 벗어나 계절의 변화와 자연의 색감을 눈에 담으며 걷습니다. 일상 속 소소한 순간을 스냅샷으로 기록합니다.",
-    tags: ["Walking", "Photography", "Healing"],
-    likes: 31
+    icon: "📖",
+    title: "새로운 기술 아티클 & 배움",
+    desc: "개발자들의 블로그 글과 최신 기술 동향을 가볍게 살펴보며 새로운 시각과 인사이트를 꾸준히 접합니다.",
+    tags: ["TechArticle", "ContinuousLearning", "Insight"],
+    likes: 27
   }
 ];
 
 // ==========================================================================
 // State Management
 // ==========================================================================
+const DEFAULT_PROFILE = {
+  avatar: "🏸",
+  name: "조명환",
+  role: "Software Developer",
+  status: "배움과 성장을 지속하는 중 🚀",
+  bio: "읽기 좋은 코드와 간결한 문제 해결을 지향하는 개발자 조명환(MyeongHwan Cho)입니다. 새로운 기술을 차근차근 익혀 실용적인 결과물로 만드는 것을 좋아하며, 주말에는 배드민턴 코트에서 땀 흘리며 에너지를 충전합니다."
+};
+
+// Clear legacy sample data if present
+let savedProfile = JSON.parse(localStorage.getItem("profile_data"));
+if (!savedProfile || savedProfile.name === "김민수") {
+  savedProfile = DEFAULT_PROFILE;
+  localStorage.setItem("profile_data", JSON.stringify(DEFAULT_PROFILE));
+  localStorage.setItem("favorites_data", JSON.stringify(DEFAULT_FAVORITES));
+}
+
 const state = {
   theme: localStorage.getItem("theme") || "dark",
   activeCategory: "all",
-  profile: JSON.parse(localStorage.getItem("profile_data")) || {
-    avatar: "👨‍💻",
-    name: "김민수",
-    role: "Frontend & Creative Explorer",
-    status: "새로운 배움과 영감을 찾는 중 🚀",
-    bio: "사용자에게 편리함과 즐거움을 주는 웹 경험을 디자인하고 구축하는 것을 좋아합니다. 호기심을 바탕으로 기술과 일상의 연결고리를 탐구하며 지속적으로 성장해나가고 있습니다."
-  },
+  profile: savedProfile,
   favorites: JSON.parse(localStorage.getItem("favorites_data")) || DEFAULT_FAVORITES,
   likedItems: JSON.parse(localStorage.getItem("liked_items")) || {},
   cheerCount: parseInt(localStorage.getItem("cheer_count") || "42", 10)
@@ -80,10 +90,10 @@ const state = {
 // Typewriter Effect
 // ==========================================================================
 const typePhrases = [
-  "기술과 일상을 잇는 따뜻한 인터랙션을 만듭니다 ✨",
-  "새로운 지식을 배우고 공유하는 것을 즐깁니다 💡",
-  "커피 한 잔과 함께 더 좋은 코드를 고민합니다 ☕",
-  "방문해 주셔서 진심으로 반갑습니다! 👋"
+  "안녕하세요! 개발자 조명환입니다 👋",
+  "기본에 충실하며 꾸준히 성장합니다 🌱",
+  "코드로 가치를 더하고, 코트 위에서 땀을 흘립니다 🏸",
+  "방문해 주셔서 감사합니다! 편안하게 둘러보세요 ☕"
 ];
 
 let phraseIndex = 0;
@@ -337,7 +347,7 @@ function initEmailCopy() {
   if (!copyBtn) return;
 
   copyBtn.addEventListener("click", async () => {
-    const email = copyBtn.getAttribute("data-email") || "minsu.alex.kim@example.com";
+    const email = copyBtn.getAttribute("data-email") || "1jmhcho@gmail.com";
     try {
       await navigator.clipboard.writeText(email);
       showToast(`이메일(${email})이 복사되었습니다! 💌`);
@@ -392,10 +402,10 @@ function initProfileModal() {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
     state.profile = {
-      avatar: document.getElementById("input-avatar").value || "👨‍💻",
-      name: document.getElementById("input-name").value || "김민수",
-      role: document.getElementById("input-role").value || "Frontend Explorer",
-      status: document.getElementById("input-status").value || "새로운 배움 탐구 중 🚀",
+      avatar: document.getElementById("input-avatar").value || "🏸",
+      name: document.getElementById("input-name").value || "조명환",
+      role: document.getElementById("input-role").value || "Software Developer",
+      status: document.getElementById("input-status").value || "배움과 성장을 지속하는 중 🚀",
       bio: document.getElementById("input-bio").value || ""
     };
 
