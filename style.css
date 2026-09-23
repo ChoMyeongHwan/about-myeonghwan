@@ -3,7 +3,7 @@
    ========================================================================== */
 :root {
   /* Typography */
-  --font-main: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  --font-main: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", system-ui, Roboto, sans-serif;
   --font-display: "Outfit", var(--font-main);
 
   /* Light Theme Defaults */
@@ -439,6 +439,21 @@ button {
   color: var(--accent-secondary);
   min-height: 1.7em;
   margin-top: 4px;
+  display: inline-block;
+}
+
+.typewriter-text::after {
+  content: "|";
+  display: inline-block;
+  color: var(--accent-primary);
+  margin-left: 3px;
+  font-weight: 300;
+  animation: blinkCursor 0.9s infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 .bio-desc {

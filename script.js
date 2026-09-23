@@ -103,23 +103,33 @@ const typingSpeed = 75;
 const deletingSpeed = 40;
 const delayBetweenPhrases = 2200;
 
+// Helper: Split string into atomic graphemes so multi-byte emojis (🏸, 👋, 🌱 등) are never split in half
+function getGraphemes(text) {
+  if (typeof Intl !== "undefined" && Intl.Segmenter) {
+    const segmenter = new Intl.Segmenter("ko", { granularity: "grapheme" });
+    return Array.from(segmenter.segment(text), s => s.segment);
+  }
+  return Array.from(text);
+}
+
 function runTypewriter() {
   const typewriterElement = document.getElementById("typewriter-line");
   if (!typewriterElement) return;
 
   const currentPhrase = typePhrases[phraseIndex];
+  const graphemes = getGraphemes(currentPhrase);
 
   if (isDeleting) {
-    typewriterElement.textContent = currentPhrase.substring(0, charIndex - 1);
     charIndex--;
+    typewriterElement.textContent = graphemes.slice(0, charIndex).join("");
   } else {
-    typewriterElement.textContent = currentPhrase.substring(0, charIndex + 1);
     charIndex++;
+    typewriterElement.textContent = graphemes.slice(0, charIndex).join("");
   }
 
   let nextSpeed = isDeleting ? deletingSpeed : typingSpeed;
 
-  if (!isDeleting && charIndex === currentPhrase.length) {
+  if (!isDeleting && charIndex === graphemes.length) {
     nextSpeed = delayBetweenPhrases;
     isDeleting = true;
   } else if (isDeleting && charIndex === 0) {
