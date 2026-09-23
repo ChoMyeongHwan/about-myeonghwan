@@ -74,8 +74,3 @@ python3 -m http.server 8080
 - **Logic**: Vanilla JavaScript (ES6+, LocalStorage API, Clipboard API)
 - **Typography**: Pretendard, Google Fonts (Outfit)
 
----
-
-## 📄 라이선스 (License)
-
-This project is open-source and available under the [MIT License](LICENSE).
