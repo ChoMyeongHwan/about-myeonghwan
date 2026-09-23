@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>안녕하세요! 저를 소개합니다 ✨</title>
+  <meta name="description" content="모던하고 인터랙티브한 개인 자기소개 웹페이지입니다. 이름, 인사말, 관심사 및 좋아하는 것들을 확인해보세요!">
+  
+  <!-- Pretendard & Outfit Fonts -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Glow Effects -->
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+
+  <!-- Main Container -->
+  <div class="app-container">
+    
+    <!-- Top Navigation Bar -->
+    <nav class="nav-bar">
+      <div class="logo">
+        <span class="logo-dot"></span>
+        <span class="logo-text">Portfolio & About</span>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="icon-btn" aria-label="테마 전환" title="테마 전환">
+          <span class="theme-icon sun-icon">☀️</span>
+          <span class="theme-icon moon-icon">🌙</span>
+        </button>
+        <button id="edit-profile-btn" class="secondary-btn" aria-label="프로필 수정">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+          </svg>
+          <span>프로필 설정</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero / Profile Section -->
+    <header class="profile-hero">
+      <div class="avatar-wrapper">
+        <div class="avatar-ring"></div>
+        <div class="avatar-inner" id="profile-avatar">
+          👨‍💻
+        </div>
+        <div class="status-badge" title="현재 상태">
+          <span class="status-pulse"></span>
+          <span id="profile-status-text">새로운 배움과 영감을 찾는 중 🚀</span>
+        </div>
+      </div>
+
+      <div class="hero-content">
+        <div class="title-greeting-wrap">
+          <span class="sub-badge" id="profile-role">Frontend & Creative Explorer</span>
+          <h1 class="main-title">
+            안녕하세요, <span class="highlight-name" id="profile-name">김민수</span>입니다.
+          </h1>
+          <p class="typewriter-text" id="typewriter-line"></p>
+        </div>
+
+        <p class="bio-desc" id="profile-bio">
+          사용자에게 편리함과 즐거움을 주는 웹 경험을 디자인하고 구축하는 것을 좋아합니다. 
+          호기심을 바탕으로 기술과 일상의 연결고리를 탐구하며 지속적으로 성장해나가고 있습니다.
+        </p>
+
+        <!-- Profile Quick Action Badges -->
+        <div class="hero-actions">
+          <button id="copy-email-btn" class="primary-btn" data-email="minsu.alex.kim@example.com">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+            </svg>
+            <span>이메일 복사하기</span>
+          </button>
+          
+          <button id="cheer-btn" class="glass-btn">
+            <span class="cheer-emoji">💖</span>
+            <span>응원 남기기</span>
+            <span class="cheer-count" id="cheer-count">42</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Favorites & Interests Section -->
+    <main class="content-section">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="section-tag">MY FAVORITES</span>
+          <h2 class="section-title">제가 좋아하는 것들</h2>
+          <p class="section-subtitle">일상에 활력과 영감을 불어넣어 주는 소중한 관심사 목록입니다. 하트를 눌러 공감해 보세요!</p>
+        </div>
+        
+        <!-- Category Filter Chips -->
+        <div class="filter-group" role="tablist" aria-label="관심사 카테고리 필터">
+          <button class="filter-chip active" data-category="all" role="tab" aria-selected="true">전체 보기</button>
+          <button class="filter-chip" data-category="tech" role="tab" aria-selected="false">💻 테크 & 코딩</button>
+          <button class="filter-chip" data-category="daily" role="tab" aria-selected="false">☕ 일상 & 라이프</button>
+          <button class="filter-chip" data-category="hobby" role="tab" aria-selected="false">🎨 취미 & 힐링</button>
+        </div>
+      </div>
+
+      <!-- Favorites Grid -->
+      <div class="cards-grid" id="favorites-grid">
+        <!-- Rendered dynamically via JS for interaction & persistence -->
+      </div>
+    </main>
+
+    <!-- Quick Stats / Highlights Section -->
+    <section class="stats-section">
+      <div class="stat-card">
+        <span class="stat-icon">☕</span>
+        <div class="stat-info">
+          <span class="stat-val">3+ 잔</span>
+          <span class="stat-label">하루 평균 마시는 커피</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">🎧</span>
+        <div class="stat-info">
+          <span class="stat-val">120+ 시간</span>
+          <span class="stat-label">월간 로파이 청취 시간</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">🌱</span>
+        <div class="stat-info">
+          <span class="stat-val">매일 1시간</span>
+          <span class="stat-label">새로운 기술 탐독</span>
+        </div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-icon">🏃‍♂️</span>
+        <div class="stat-info">
+          <span class="stat-val">5 km</span>
+          <span class="stat-label">주말 저녁 산책 루틴</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <div class="footer-content">
+        <p>© 2026 <span id="footer-name">김민수</span>. All rights reserved.</p>
+        <p class="footer-sub">Crafted with HTML, Modern CSS & JavaScript</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Profile Edit Modal -->
+  <div class="modal-overlay" id="profile-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>프로필 정보 설정</h3>
+        <button class="modal-close" id="modal-close-btn" aria-label="닫기">&times;</button>
+      </div>
+      <form id="profile-edit-form" class="modal-body">
+        <div class="form-group">
+          <label for="input-avatar">대표 이모지</label>
+          <input type="text" id="input-avatar" maxlength="2" value="👨‍💻" class="form-input">
+        </div>
+        <div class="form-group">
+          <label for="input-name">이름</label>
+          <input type="text" id="input-name" required value="김민수" class="form-input">
+        </div>
+        <div class="form-group">
+          <label for="input-role">역할 / 한 줄 태그</label>
+          <input type="text" id="input-role" value="Frontend & Creative Explorer" class="form-input">
+        </div>
+        <div class="form-group">
+          <label for="input-status">현재 상태</label>
+          <input type="text" id="input-status" value="새로운 배움과 영감을 찾는 중 🚀" class="form-input">
+        </div>
+        <div class="form-group">
+          <label for="input-bio">간단한 소개글</label>
+          <textarea id="input-bio" rows="3" class="form-input">사용자에게 편리함과 즐거움을 주는 웹 경험을 디자인하고 구축하는 것을 좋아합니다. 호기심을 바탕으로 기술과 일상의 연결고리를 탐구하며 지속적으로 성장해나가고 있습니다.</textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="glass-btn" id="modal-cancel-btn">취소</button>
+          <button type="submit" class="primary-btn">저장하기</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast-notification" role="alert" aria-live="polite">
+    <span class="toast-icon">✅</span>
+    <span class="toast-msg" id="toast-msg">클립보드에 복사되었습니다!</span>
+  </div>
+
+  <!-- Particle Container for Hearts -->
+  <div id="hearts-container" class="hearts-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
