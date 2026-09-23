@@ -1,6 +1,6 @@
 # ✨ Modern Interactive Self-Introduction Webpage
 
-소프트웨어 개발자 **조명환(MyeongHwan Cho)**의 모던하고 인터랙티브한 개인 자기소개 및 포트폴리오 웹페이지입니다.  
+소프트웨어 개발자 **조명환(MyeongHwan Cho)** 의 모던하고 인터랙티브한 개인 자기소개 및 포트폴리오 웹페이지입니다.  
 HTML, CSS, JavaScript 순수 웹 기술(Vanilla)만을 사용하여 가볍고 빠르며, 글래스모피즘(Glassmorphism)과 앰비언트 글로우(Ambient Glow) 효과를 적용하여 세련된 시각 경험을 제공합니다.
 
 ---
@@ -9,7 +9,7 @@ HTML, CSS, JavaScript 순수 웹 기술(Vanilla)만을 사용하여 가볍고 �
 
 | 🌙 다크 모드 (Dark Mode) | ☀️ 라이트 모드 (Light Mode) |
 | :---: | :---: |
-| <img src="assets/preview-dark.png" alt="Dark Mode Preview" width="100%" /> | <img src="assets/preview-light.png" alt="Light Mode Preview" width="100%" /> |
+| <img src="./assets/preview-dark.png" alt="Dark Mode Preview" width="100%" /> | <img src="./assets/preview-light.png" alt="Light Mode Preview" width="100%" /> |
 
 ---
 
@@ -71,6 +71,14 @@ python3 -m http.server 8080
 
 - **Markup**: HTML5 (Semantic Elements, Accessibility)
 - **Styling**: Vanilla CSS3 (Custom Properties, Flexbox, Grid, Keyframes, Backdrop-filter)
-- **Logic**: Vanilla JavaScript (ES6+, LocalStorage API, Clipboard API)
+- **Logic**: Vanilla JavaScript (ES6+, LocalStorage API, Clipboard API, Intl.Segmenter)
 - **Typography**: Pretendard, Google Fonts (Outfit)
+
+---
+
+## 👤 작성자 (Author)
+
+- **조명환 (MyeongHwan Cho)**
+- GitHub: [@ChoMyeongHwan](https://github.com/ChoMyeongHwan)
+- Email: [1jmhcho@gmail.com](mailto:1jmhcho@gmail.com)
 
